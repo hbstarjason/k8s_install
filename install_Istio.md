@@ -1,4 +1,4 @@
-# istio_install
+# install_istio
 
 官网地址：https://istio.io/docs/setup/kubernetes/helm-install/
 
