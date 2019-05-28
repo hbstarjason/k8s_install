@@ -1,4 +1,4 @@
-K3s试用
+# K3s试用
 
 ```sh
 # https://k3s.io/
@@ -65,3 +65,6 @@ $ echo CLUSTER_IP=$CLUSTER_IP
 lynx $CLUSTER_IP:80 
 ```
 
+# 简单试用完毕，一个微型k8s集群瞬间搭建完毕，很酸爽！赶脚与另外两个项目很类似：
+1、kind（https://kind.sigs.k8s.io/）
+2、Microk8s （https://microk8s.io/）
