@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# wget https://raw.githubusercontent.com/hbstarjason/k8s_install/master/deploy-helm.sh 
+
 HELM_VERSION="v2.14.0"
 
 curl -sSL https://kubernetes-helm.storage.googleapis.com/helm-${HELM_VERSION}-linux-amd64.tar.gz -o helm-linux-amd64.tar.gz
