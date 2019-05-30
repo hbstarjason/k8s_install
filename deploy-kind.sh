@@ -1,4 +1,3 @@
-#!/bin/bash
 
 # wget https://raw.githubusercontent.com/hbstarjason/k8s_install/master/deploy-kind.sh
 
