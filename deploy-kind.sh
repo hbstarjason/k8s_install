@@ -33,7 +33,7 @@ export KUBECONFIG="$(kind get kubeconfig-path --name="kind")"
 kubectl cluster-info
 kubectl get node 
 
-sleep 60
+sleep 30
 
 # install helm 
 sudo snap install helm --classic
@@ -41,7 +41,6 @@ sudo snap install helm --classic
 kubectl apply -f  https://raw.githubusercontent.com/hbstarjason/k8s_install/master/helm-admin.yaml
 helm init
 
-sleep 60
-export KUBECONFIG="$(kind get kubeconfig-path --name="kind")"
-
 helm version
+
+export KUBECONFIG="$(kind get kubeconfig-path --name="kind")"
