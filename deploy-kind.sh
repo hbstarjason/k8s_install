@@ -24,6 +24,8 @@ EOF
 
 kind create cluster --config=kind-config.yaml
 
+sleep 30
+
 export KUBECONFIG="$(kind get kubeconfig-path --name="kind")"
 kubectl cluster-info
 
