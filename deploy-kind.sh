@@ -22,6 +22,8 @@ EOF
 
 kind create cluster --config=kind-config.yaml
 
+export KUBECONFIG="$(kind get kubeconfig-path --name="kind")"
+
 # install helm 
 sudo snap install helm --classic
 helm version
