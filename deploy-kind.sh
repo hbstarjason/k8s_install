@@ -28,10 +28,15 @@ kind create cluster --config=kind-config.yaml
 
 export KUBECONFIG="$(kind get kubeconfig-path --name="kind")"
 kubectl cluster-info
+kubectl get node 
 
 sleep 60
 
 # install helm 
 sudo snap install helm --classic
 helm init
+
+sleep 60
+export KUBECONFIG="$(kind get kubeconfig-path --name="kind")"
+
 helm version
