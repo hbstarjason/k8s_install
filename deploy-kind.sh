@@ -37,6 +37,8 @@ sleep 60
 
 # install helm 
 sudo snap install helm --classic
+
+kubectl apply -f  https://raw.githubusercontent.com/hbstarjason/k8s_install/master/helm-admin.yaml
 helm init
 
 sleep 60
