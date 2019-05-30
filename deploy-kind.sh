@@ -1,3 +1,5 @@
+# wget https://raw.githubusercontent.com/hbstarjason/k8s_install/master/deploy-kind.sh
+
 # install kubectl 
 sudo snap install kubectl --classic
 kubectl version
