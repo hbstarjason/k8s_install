@@ -10,7 +10,6 @@ kubectl version
 curl -Lo ./kind-linux-amd64 https://github.com/kubernetes-sigs/kind/releases/download/v0.3.0/kind-linux-amd64 && \
 chmod +x ./kind-linux-amd64 && \
 mv ./kind-linux-amd64 /usr/local/bin/kind && \
-
 kind version
 
 cat <<EOF >  kind-config.yaml
