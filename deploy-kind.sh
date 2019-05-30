@@ -1,5 +1,6 @@
 
 # wget https://raw.githubusercontent.com/hbstarjason/k8s_install/master/deploy-kind.sh && sh deploy-kind.sh
+# https://uappexplorer.com/snaps
 
 # install kubectl 
 sudo snap install kubectl --classic
@@ -24,10 +25,10 @@ EOF
 
 kind create cluster --config=kind-config.yaml
 
-sleep 30
-
 export KUBECONFIG="$(kind get kubeconfig-path --name="kind")"
 kubectl cluster-info
+
+sleep 60
 
 # install helm 
 sudo snap install helm --classic
