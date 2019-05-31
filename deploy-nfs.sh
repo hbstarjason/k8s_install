@@ -15,7 +15,7 @@ EOF
 /etc/init.d/nfs-kernel-server restart
 
 mkdir -p /data/nfs-mount
-mount $LOCAL_IP:/data/nfs  /data/nfs-mount
+mount ${LOCAL_IP}:/data/nfs  /data/nfs-mount
 df
 
 # umount /data/nfs-mount
