@@ -9,18 +9,21 @@ mkdir -p /data/nfs && chmod a+rw /data/nfs
 apt-get update && apt-get install -y nfs-kernel-server nfs-common
 
 cat << EOF >> /etc/exports
-/data/nfs *(rw,sync,no_subtree_check)
+/data/nfs *(rw,sync,insecure,no_subtree_check,no_root_squash)
 EOF
 
+exportfs -r
 /etc/init.d/nfs-kernel-server restart
+
+showmount -e localhost
 
 mkdir -p /data/nfs-mount
 mount ${LOCAL_IP}:/data/nfs  /data/nfs-mount
-df
+df -h
 
 # umount /data/nfs-mount
-# ip addr > /data/nfs-mount/test.txt
-# cat /data/nfs/test.txt
+ip addr > /data/nfs-mount/test.txt
+cat /data/nfs/test.txt
 
 # install NFS-Client Provisioner 
 helm install -n nfs stable/nfs-client-provisioner --set nfs.server=${LOCAL_IP} --set nfs.path=/data/nfs --namespace nfs
