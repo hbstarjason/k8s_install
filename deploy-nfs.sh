@@ -37,7 +37,7 @@ apiVersion: v1
 metadata:
   name: nfs-sc-pvc
   annotations:
-    volume.beta.kubernetes.io/storage-class: "nfs"
+    volume.beta.kubernetes.io/storage-class: "nfs-client"
 spec:
   accessModes:
     - ReadWriteMany
