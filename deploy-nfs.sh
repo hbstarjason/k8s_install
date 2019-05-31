@@ -27,3 +27,25 @@ df -h
 
 # install NFS-Client Provisioner 
 helm install -n nfs stable/nfs-client-provisioner --set nfs.server=${LOCAL_IP} --set nfs.path=/data/nfs --namespace nfs
+
+helm ls
+kubectl get sc
+
+cat << EOF > nfs-sc-pvc.yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: nfs-sc-pvc
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "nfs"
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 2Gi
+EOF
+
+kubectl create -f nfs-sc-pvc.yaml 
+kubectl get pv 
+kubectl get pvc 
