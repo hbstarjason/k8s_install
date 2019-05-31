@@ -1,5 +1,5 @@
 
-# https://raw.githubusercontent.com/hbstarjason/k8s_install/master/deploy-nfs.sh
+# wget https://raw.githubusercontent.com/hbstarjason/k8s_install/master/deploy-nfs.sh
 
 mkdir -p /data/nfs && chmod a+rw /data/nfs
 
