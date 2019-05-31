@@ -1,6 +1,8 @@
 
 # wget https://raw.githubusercontent.com/hbstarjason/k8s_install/master/deploy-nfs.sh
 
+LOCAL_IP=ifconfig ens3 |grep "inet addr"| cut -f 2 -d ":"|cut -f 1 -d " "
+
 mkdir -p /data/nfs && chmod a+rw /data/nfs
 
 apt-get update && apt-get install -y nfs-kernel-server nfs-common
@@ -12,7 +14,7 @@ EOF
 /etc/init.d/nfs-kernel-server restart
 
 mkdir -p /data/nfs-mount
-mount 172.17.0.17:/data/nfs  /data/nfs-mount
+mount $LOCAL_IP:/data/nfs  /data/nfs-mount
 df
 
 # umount /data/nfs-mount
