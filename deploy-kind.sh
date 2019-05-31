@@ -44,3 +44,7 @@ helm init
 helm version
 
 export KUBECONFIG="$(kind get kubeconfig-path --name="kind")"
+
+# https://blog.csdn.net/aixiaoyang168/article/details/79466938
+# curl -Lo values.yaml https://raw.githubusercontent.com/kubernetes/charts/master/stable/spinnaker/values.yaml
+# helm install -n spinnaker stable/spinnaker -f values.yaml --timeout 3600  --namespace spinnaker
