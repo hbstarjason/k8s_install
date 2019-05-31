@@ -22,8 +22,8 @@ mount ${LOCAL_IP}:/data/nfs  /data/nfs-mount
 df -h
 
 # umount /data/nfs-mount
-ip addr > /data/nfs-mount/test.txt
-cat /data/nfs/test.txt
+# ip addr > /data/nfs-mount/test.txt
+# cat /data/nfs/test.txt
 
 # install NFS-Client Provisioner 
 helm install -n nfs stable/nfs-client-provisioner --set nfs.server=${LOCAL_IP} --set nfs.path=/data/nfs --namespace nfs
