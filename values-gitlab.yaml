@@ -5,6 +5,7 @@
 image: gitlab/gitlab-ce:11.11.0-ce.0
 # https://blog.csdn.net/aixiaoyang168/article/details/81057101
 
+# wget https://raw.githubusercontent.com/hbstarjason/k8s_install/master/values-gitlab.yaml
 # helm install --name gitlab -f values-gitlab.yaml stable/gitlab-ce --namespace gitlab-ce
 
 ## Specify a imagePullPolicy
