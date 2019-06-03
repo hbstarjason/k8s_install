@@ -5,7 +5,7 @@
 image: gitlab/gitlab-ce:11.11.0-ce.0
 # https://blog.csdn.net/aixiaoyang168/article/details/81057101
 
-# helm install --name gitlab -f values-gitlab.yaml stable/gitlab-ce --namespaces gitlab
+# helm install --name gitlab -f values-gitlab.yaml stable/gitlab-ce --namespace gitlab-ce
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
