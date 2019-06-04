@@ -1,6 +1,6 @@
 
 # https://www.katacoda.com/courses/kubernetes/helm-package-manager
-# wget https://raw.githubusercontent.com/hbstarjason/k8s_install/master/deploy-nfs.sh
+# wget https://raw.githubusercontent.com/hbstarjason/k8s_install/master/deploy-nfs.sh && sh deploy-nfs.sh
 
 LOCAL_IP=$(ifconfig ens3 |grep "inet addr"| cut -f 2 -d ":"|cut -f 1 -d " ")
 
