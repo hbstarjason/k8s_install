@@ -1,5 +1,5 @@
 # yum install -y wget 
-# https://raw.githubusercontent.com/hbstarjason/k8s_install/master/deploy-pwk.sh && sh deploy-pwk.sh
+# wget https://raw.githubusercontent.com/hbstarjason/k8s_install/master/deploy-pwk.sh && sh deploy-pwk.sh
 
 kubeadm init --apiserver-advertise-address $(hostname -i)
 
