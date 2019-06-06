@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# wget https://raw.githubusercontent.com/hbstarjason/k8s_install/master/deploy-docker_and_compose.sh 
+
 if [[ "$(whoami)" != "root" ]]; then
 	echo "please run this script as root ." >&2
 	exit 1
