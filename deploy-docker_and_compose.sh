@@ -13,6 +13,8 @@ sleep 5
 #install docker
 
 # curl -fLsS https://get.docker.com/ | sh
+# curl -sSL https://get.daocloud.io/docker | sh
+# 
 
 install_docker() {
 	yum install -y yum-utils device-mapper-persistent-data lvm2
