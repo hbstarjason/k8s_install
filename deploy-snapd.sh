@@ -24,13 +24,9 @@ sudo snap install microk8s --classic
 
 ####
 
-apt-get update && apt-get install -y apt-transport-https
-curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | apt-key add -
-cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
-deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main
-EOF
-
-apt-get update && apt-get install -y kubelet kubeadm kubectl
+# install kubectl 
+sudo snap install kubectl --classic
+kubectl version
 
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.1.1/minikube-linux-amd64 && \
 chmod +x minikube && \
