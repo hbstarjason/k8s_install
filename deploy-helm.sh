@@ -13,10 +13,10 @@ mv linux-amd64/helm /usr/local/bin/
 rm -rf helm-linux-amd64.tar.gz linux-amd64
 
 # init helm
-kubectl create -f https://raw.githubusercontent.com/hbstarjason/k8s_install/master/helm-admin.yaml
+kubectl create -f https://raw.githubusercontent.com/hbstarjason/k8s_install/master/helm-admin-rbac.yaml 
 helm init
 
-# helm init --service-account helm-admin --upgrade -i registry.cn-hangzhou.aliyuncs.com/google_containers/tiller:v2.14.0 --stable-repo-url https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
+# helm init --service-account tiller --upgrade -i registry.cn-hangzhou.aliyuncs.com/google_containers/tiller:v2.14.0 --stable-repo-url https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
 
 # update repo
 helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
