@@ -22,7 +22,7 @@ subjects:
 EOF
 
 helm init --service-account tiller
-helm upate
+helm update
 
 kubectl create ns spinnaker
 
