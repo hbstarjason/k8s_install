@@ -43,7 +43,7 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 2Gi
+      storage: 10Gi
 EOF
 
 kubectl create -f nfs-sc-pvc.yaml 
