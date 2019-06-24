@@ -36,7 +36,7 @@ metadata:
     chart: redis-1.1.6
     heritage: Tiller
     release: spinnaker
-  name: spinnaker-redis
+  name: redis-data-spinnaker-redis-master-0
 spec:
   accessModes:
   - ReadWriteOnce
