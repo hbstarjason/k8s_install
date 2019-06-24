@@ -1,7 +1,11 @@
 ```bash
 # https://www.spinnaker.io/setup/install/halyard/
 $ curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
-$ useradd -m spinnaker 
+$ useradd -m spinnaker
+
+# usermod -aG sudo spinnaker 
+# su - spinnaker
+
 $ sudo bash InstallHalyard.sh
 Please supply a non-root user to run Halyard as: spinnaker
 $ hal -v 
@@ -61,11 +65,15 @@ $ hal config provider kubernetes account add k8s-account \
 # hal config provider kubernetes account add my-k8s-account --docker-registries my-docker-registry,harbor
 
 
-# 
+
+# sudo hal config deploy edit --type localdebian
+
 $ hal version list
 $ hal config version edit --version
 $ sudo hal deploy apply
 
+
+# https://blog.spinnaker.io/exposing-spinnaker-to-end-users-4808bc936698
 # 部署完成后，默认只能本机访问，改为从外网能直接访问
 $ echo "host: 0.0.0.0" | tee \
 ~/.hal/default/service-settings/gate.yml \
