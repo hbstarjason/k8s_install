@@ -26,7 +26,7 @@ df -h
 # cat /data/nfs/test.txt
 
 # install NFS-Client Provisioner 
-helm install -n nfs stable/nfs-client-provisioner --set nfs.server=${LOCAL_IP} --set nfs.path=/data/nfs --namespace nfs
+helm install -n nfs stable/nfs-client-provisioner --set nfs.server=${LOCAL_IP} --set nfs.path=/data/nfs --set storageClass.name=standard --namespace nfs
 
 helm ls
 kubectl get sc
@@ -37,7 +37,7 @@ apiVersion: v1
 metadata:
   name: nfs-sc-pvc
   annotations:
-    volume.beta.kubernetes.io/storage-class: "nfs-client"
+    volume.beta.kubernetes.io/storage-class: "standard"
 spec:
   accessModes:
     - ReadWriteMany
