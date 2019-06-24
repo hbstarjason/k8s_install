@@ -25,4 +25,27 @@ spec:
   storageClassName: nfs-client
 EOF
  
- kubectl apply -f spinnaker-minio-pvc.yaml
+kubectl apply -f spinnaker-minio-pvc.yaml
+
+cat <<EOF >> spinnaker-redis-pvc.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: spinnaker-redis
+    chart: redis-1.1.6
+    heritage: Tiller
+    release: spinnaker
+  name: spinnaker-redis
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 8Gi
+  storageClassName: nfs-client
+EOF
+
+kubectl apply -f spinnaker-redis-pvc.yaml
+
+helm install --name spinnaker stable/spinnaker --debug 
