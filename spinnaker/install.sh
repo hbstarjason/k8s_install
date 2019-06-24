@@ -23,6 +23,6 @@ spec:
     requests:
       storage: 10Gi
   storageClassName: nfs-client
-  EOF
+EOF
  
  kubectl apply -f spinnaker-minio-pvc.yaml
