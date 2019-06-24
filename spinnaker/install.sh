@@ -22,7 +22,7 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: nfs-client
+  storageClassName: standard
 EOF
  
 kubectl apply -f spinnaker-minio-pvc.yaml
@@ -43,7 +43,7 @@ spec:
   resources:
     requests:
       storage: 8Gi
-  storageClassName: nfs-client
+  storageClassName: standard
 EOF
 
 kubectl apply -f spinnaker-redis-pvc.yaml
