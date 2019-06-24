@@ -11,3 +11,18 @@ kubectl apply -f  https://raw.githubusercontent.com/hbstarjason/k8s_install/mast
 # kubectl apply -f quick-install.yml
 
 
+cat <<EOF >> spinnaker-minio-pvc.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: spinnaker-minio
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: nfs-client
+  EOF
+ 
+ kubectl apply -f spinnaker-minio-pvc.yaml
