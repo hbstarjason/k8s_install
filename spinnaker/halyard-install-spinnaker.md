@@ -1,4 +1,6 @@
 ```bash
+############# 安装halyard
+
 # https://www.spinnaker.io/setup/install/halyard/
 $ curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
 $ useradd -m spinnaker
@@ -12,14 +14,15 @@ $ curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
 
 $ sudo bash InstallHalyard.sh
 Please supply a non-root user to run Halyard as: spinnaker
+
 $ hal -v 
 1.21.0-20190619202809
 
-# 配置redis存储
+############# 配置redis存储
 # apt install redis-server
 $ hal config storage edit --type redis
 
-# 配置cloudprovider
+############# 配置cloudprovider
 $ hal config provider docker-registry enable
 
 # 集成harbor
@@ -35,16 +38,16 @@ $ hal config provider docker-registry account add my-docker-registry \
 --password
 Your docker registry password: XXX
 
-# 集成jenkins
+############# 集成jenkins
 $ hal config ci jenkins enable
 $ hal config ci jenkins master add my-jenkins-master \
 --address http://15.114.100.64:8080/jenkins --username admin \
 --password
 The password of the jenkins user to authenticate as.: XXXX
 
-# 配置邮件提醒(可选)
+############# 配置邮件提醒(可选)
 
-# 集成kubernetes
+############## 集成kubernetes
 $ kubectl config view
 $ kubectl config get-contexts
 
@@ -62,18 +65,23 @@ ns.json
 $ kubectl create -f ns.json
 namespace "spinnaker" created
 
+
 $ hal config provider kubernetes enable
 $ hal config provider kubernetes account add k8s-account \
      --provider-version v2 \
      --context $(kubectl config current-context)
-# hal config provider kubernetes account add my-k8s-account --docker-registries my-docker-registry,harbor
+     
+##### hal config provider kubernetes account add my-k8s-account --docker-registries my-docker-registry,harbor
 
 
 
-# sudo hal config deploy edit --type localdebian
+$ hal config deploy edit --type=distributed --account-name k8s-account
+
+
+### sudo hal config deploy edit --type localdebian
 
 $ hal version list
-$ hal config version edit --version
+$ hal config version edit --version 1.12.13
 $ sudo hal deploy apply
 
 
