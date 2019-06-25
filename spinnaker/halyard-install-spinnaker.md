@@ -6,6 +6,10 @@ $ useradd -m spinnaker
 # usermod -aG sudo spinnaker 
 # su - spinnaker
 
+$ curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
+    gpg --dearmor | \
+    sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
+
 $ sudo bash InstallHalyard.sh
 Please supply a non-root user to run Halyard as: spinnaker
 $ hal -v 
