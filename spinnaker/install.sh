@@ -49,6 +49,7 @@ kubectl apply -f  https://raw.githubusercontent.com/hbstarjason/k8s_install/mast
 
 # official
 # kubectl apply -f https://spinnaker.io/downloads/kubernetes/quick-install.yml
+# https://github.com/spinnaker/spinnaker.github.io/blob/master/downloads/kubernetes/quick-install.yml
 
 # wget https://spinnaker.io/downloads/kubernetes/quick-install.yml
 # sed -i "s/standard/nfs-client/g" quick-install.yml
