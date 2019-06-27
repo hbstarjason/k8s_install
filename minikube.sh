@@ -37,5 +37,11 @@ curl -Lo minikube http://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/releas
 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 
 # 
-minikube start --registry-mirror=https://registry.docker-cn.com --kubernetes-version v1.12.1
+minikube start --registry-mirror=https://registry.docker-cn.com --kubernetes-version v1.14.1
 
+brew install kubernetes-helm
+helm init --upgrade -i registry.cn-hangzhou.aliyuncs.com/google_containers/tiller:v2.14.1 --stable-repo-url https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
+
+minikube addons enable ingress
+
+# https://kubernetes.feisky.xyz/cha-jian-kuo-zhan/ingress/minikube-ingress
