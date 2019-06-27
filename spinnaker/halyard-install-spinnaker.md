@@ -3,10 +3,10 @@
 
 # https://www.spinnaker.io/setup/install/halyard/
 $ curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
-$ useradd -m spinnaker
+$ useradd -m zhang
 
-# usermod -aG sudo spinnaker 
-# su - spinnaker
+# usermod -aG sudo zhang 
+# su - zhang
 
 $ curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
     gpg --dearmor | \
