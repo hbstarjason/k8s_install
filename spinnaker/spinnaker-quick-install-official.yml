@@ -1,3 +1,4 @@
+# https://github.com/spinnaker/spinnaker.github.io/blob/master/downloads/kubernetes/quick-install.yml
 # kubectl apply -f https://spinnaker.io/downloads/kubernetes/quick-install.yml
 
 # wget https://spinnaker.io/downloads/kubernetes/quick-install.yml
