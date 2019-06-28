@@ -39,10 +39,27 @@ curl -Lo minikube http://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/releas
 # 
 minikube start --registry-mirror=https://registry.docker-cn.com --kubernetes-version v1.14.1
 
+minikube start --vm-driver=none
+minikube start --vm-driver hyperkit
+minikube start --vm-driver hyperv
+
 brew install kubernetes-helm
 helm init --upgrade -i registry.cn-hangzhou.aliyuncs.com/google_containers/tiller:v2.14.1 --stable-repo-url https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
 
 minikube addons enable ingress
+
+kubectl run nginx --replicas=2 --image=nginx:alpine --port=80 --image-pull-policy=IfNotPresent
+kubectl expose deployment nginx --type=NodePort --name=example-service-nodeport
+
+# ClusterIP
+kubectl expose deployment nginx --name=example-service
+
+minikube logs
+
+minikube config set memory 8192
+minikube config set cpus 4
+
+# https://qii404.me/2018/01/06/minukube.html
 
 # https://kubernetes.feisky.xyz/cha-jian-kuo-zhan/ingress/minikube-ingress
 
