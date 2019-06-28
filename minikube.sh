@@ -45,3 +45,11 @@ helm init --upgrade -i registry.cn-hangzhou.aliyuncs.com/google_containers/tille
 minikube addons enable ingress
 
 # https://kubernetes.feisky.xyz/cha-jian-kuo-zhan/ingress/minikube-ingress
+
+docker pull quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.23.0 && \
+docker tag quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.23.0 hbstarjason/nginx-ingress-controller:0.23.0 && \
+docker push hbstarjason/nginx-ingress-controller:0.23.0
+
+docker pull hbstarjason/nginx-ingress-controller:0.23.0 && \
+docker tag hbstarjason/nginx-ingress-controller:0.23.0 quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.23.0 && \
+docker rmi hbstarjason/nginx-ingress-controller:0.23.0 
