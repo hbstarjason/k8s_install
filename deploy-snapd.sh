@@ -21,6 +21,12 @@ apt-get update && apt-get install snapd
 # https://microk8s.io/
 sudo snap install microk8s --classic
 
+# https://github.com/canonical-labs/cicd-microk8s-basic
+
+# sudo snap install multipass --beta --classic
+
+# install helm 
+sudo snap install helm --classic
 
 ####
 
