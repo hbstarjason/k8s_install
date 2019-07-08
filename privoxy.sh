@@ -48,8 +48,6 @@ curl ip.gs
 sudo apt-get install polipo
 
 cat >> /etc/polipo/config <<EOF
-logSyslog = true
-logFile = /var/log/polipo/polipo.log
 proxyAddress = "0.0.0.0"
 proxyPort = 17070
 socksParentProxy = "127.0.0.1:7070"
