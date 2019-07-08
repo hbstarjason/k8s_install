@@ -19,7 +19,10 @@ sudo nohup sslocal -c /etc/shadowsocks.json &>> /var/log/sslocal.log &
 # https://ywnz.com/linuxjc/2687.html
 vi /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
 
+# libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,)
 libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)
+
+# libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx)
 libcrypto.EVP_CIPHER_CTX_reset(self._ctx)
 
 
