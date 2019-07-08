@@ -15,19 +15,27 @@ cat >>/etc/shadowsocks.json<<EOF
 EOF
 
 sudo nohup sslocal -c /etc/shadowsocks.json &>> /var/log/sslocal.log &
-# https://ywnz.com/linuxjc/2687.html
 
+# https://ywnz.com/linuxjc/2687.html
+vi /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
+
+libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)
+libcrypto.EVP_CIPHER_CTX_reset(self._ctx)
+
+
+##################
 apt-get install privoxy -y
 
 vi /etc/privoxy/config 
 
 listen-address 0.0.0.0:8118
-forward-socks5 / localhost:1080 .
+# forward-socks5 / localhost:1080 .
+forward-socks5 / 127.0.0.1:1080 .
 
 systemctl restart privoxy
-/etc/init.d/privoxy  restart
+# /etc/init.d/privoxy  restart
 
-export http_proxy=http://localhost:8118  && export https_proxy=http://localhost:8118 
+# export http_proxy=http://localhost:8118  && export https_proxy=http://localhost:8118 
 export http_proxy=http://127.0.0.1:8118  && export https_proxy=http://127.0.0.1:8118
 
 curl ip.gs
