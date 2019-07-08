@@ -15,6 +15,7 @@ cat >>/etc/shadowsocks.json<<EOF
 EOF
 
 sudo nohup sslocal -c /etc/shadowsocks.json &>> /var/log/sslocal.log &
+# https://ywnz.com/linuxjc/2687.html
 
 apt-get install privoxy -y
 
@@ -27,6 +28,7 @@ systemctl restart privoxy
 /etc/init.d/privoxy  restart
 
 export http_proxy=http://localhost:8118  && export https_proxy=http://localhost:8118 
+export http_proxy=http://127.0.0.1:8118  && export https_proxy=http://127.0.0.1:8118
 
 curl ip.gs
 
