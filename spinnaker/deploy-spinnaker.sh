@@ -53,6 +53,7 @@ cd /home/zhang/.hal/default/ && \
 mkdir service-settings && \
 cd service-settings
 
+# tar -zcvf hal-config.tar.gz /home/zhang/.hal
 cat >> clouddriver.yml <<EOF
 artifactId: hbstarjason/clouddriver:4.3.10-20190424030608
 EOF
