@@ -1,0 +1,28 @@
+[0m
+[0m
+[2A[0m[0m[2K[0m[32m[1m+ [0m[1mGet current deployment[0m
+[0m[2K[0m  [0mSuccess[0m[0m
+[0m
+[0m
+[2A[0m[0m[2K[0m[32m[1m+ [0m[1mGet Spinnaker version[0m
+[0m[2K[0m  [0mSuccess[0m[0m
+[0m
+[0m
+[2A[0m[0m[2K[0m[34m[1m- [0m[1mGet released versions[0m
+[0m[2K[0m[0m
+[2A[0m[0m[2K[0m[32m[1m+ [0m[1mGet released versions[0m
+[0m[2K[0m  [0mSuccess[0m[0m
+[32m[1m+ [0mYou are on version "", and the following are available:[0m[0m
+ - 1.13.12 (BirdBox):
+   Changelog: https://gist.github.com/spinnaker-release/9ee98b0cbed65e334cd498bc31676295
+   Published: Mon Jul 29 18:18:59 UTC 2019
+   (Requires Halyard >= 1.17)
+ - 1.14.14 (LoveDeathAndRobots):
+   Changelog: https://gist.github.com/spinnaker-release/ad1e0eb6b6547b296c9103eb21d9beec
+   Published: Wed Aug 14 13:37:51 UTC 2019
+   (Requires Halyard >= 1.17)
+ - 1.15.2 (ExtremelyWickedShockinglyEvilAndVile):
+   Changelog: https://gist.github.com/spinnaker-release/e72cc8015d544738d07d57a183cb5404
+   Published: Mon Aug 12 20:48:52 UTC 2019
+   (Requires Halyard >= 1.17)
+[0m
