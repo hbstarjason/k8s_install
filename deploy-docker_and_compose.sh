@@ -34,6 +34,7 @@ install_docker() {
 
 # wget https://get.daocloud.io/docker/compose/releases/download/1.24.0/docker-compose-Linux-x86_64 && mv docker-compose-Linux-x86_64 /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose && docker-compose --version
 
+# wget -c https://raw.githubusercontent.com/hbstarjason/k8s_install/master/docker-compose && mv docker-compose /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose && docker-compose --version
 
 install_docker_compose() {
 
