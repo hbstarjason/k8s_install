@@ -1,4 +1,5 @@
 # https://katacoda.com/courses/kubernetes/launch-single-node-cluster
+# wget https://raw.githubusercontent.com/hbstarjason/k8s_install/master/spinnaker/01-spinnaker_halyard_setup.sh && sh 01-spinnaker_halyard_setup.sh
 
 SPINNAKER_VERSION=1.14.15
 
@@ -9,7 +10,7 @@ curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
     gpg --dearmor | \
     sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
 
-bash InstallHalyard.sh --user zhang
+bash InstallHalyard.sh --user zhang -y
 
 set -e
 
