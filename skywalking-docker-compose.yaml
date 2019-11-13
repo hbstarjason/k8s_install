@@ -1,4 +1,5 @@
 # https://www.jianshu.com/p/0da562f60d56
+# https://github.com/apache/skywalking/blob/master/docker/docker-compose.yml
 version: '3.3'
 services:
   elasticsearch:
