@@ -1,0 +1,48 @@
+# https://www.jianshu.com/p/0da562f60d56
+version: '3.3'
+services:
+  elasticsearch:
+    #image: docker.elastic.co/elasticsearch/elasticsearch:6.4.3
+    image: elasticsearch:6.6.1
+    container_name: elasticsearch
+    restart: always
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      discovery.type: single-node
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+  oap:
+    #image: evanxuhe/skywalking-oap-server:6.1.0
+    image: apache/skywalking-oap-server:6.2.0
+    container_name: oap
+    depends_on:
+      - elasticsearch
+    links:
+      - elasticsearch
+    restart: always
+    ports:
+      - 11800:11800
+      - 12800:12800
+    environment:
+      TZ: Asia/Shanghai
+      SW_STORAGE: elasticsearch
+      SW_STORAGE_ES_CLUSTER_NODES: elasticsearch:9200
+#   volumes:
+#     - ./config:/skywalking/config
+  ui:
+    image: apache/skywalking-ui:6.2.0
+    container_name: ui
+    depends_on:
+      - oap
+    links:
+      - oap
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      SW_OAP_ADDRESS: oap:12800
+      TZ: Asia/Shanghai
