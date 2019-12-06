@@ -1,0 +1,61 @@
+# copy from https://github.com/cwansart/infrastructure-test/blob/master/config/nexus.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nexus
+  name: nexus
+spec:
+  ports:
+    - name: web-port
+      port: 8081
+      protocol: TCP
+      targetPort: 8081
+    - name: docker-registry-port
+      port: 10080
+      protocol: TCP
+      targetPort: 10080
+  selector:
+    app: nexus
+  type: NodePort
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: nexus
+  name: nexus-volume-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nexus
+  name: nexus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nexus
+  template:
+    metadata:
+      labels:
+        app: nexus
+    spec:
+      containers:
+        - image: sonatype/nexus3:3.19.1
+          name: nexus
+          volumeMounts:
+            - name: nexus-volume
+              mountPath: /nexus-data
+      volumes:
+        - name: nexus-volume
+          persistentVolumeClaim:
+            claimName: nexus-volume-claim
