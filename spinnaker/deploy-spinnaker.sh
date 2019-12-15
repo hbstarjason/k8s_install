@@ -12,6 +12,14 @@ bash InstallHalyard.sh --user zhang
 hal -v
 hal version list
 
+################################################
+
+curl -fsSL get.docker.com -o get-docker.sh
+sh get-docker.sh
+sudo usermod -aG docker zhang
+sudo docker run -p 127.0.0.1:9090:9000 -d --name minio1 -v /mnt/data:/data -v /mnt/config:/root/.minio minio/minio server /data
+
+
 ############################################################
 read version
 if [ -z "$version" ]
@@ -41,7 +49,7 @@ sleep 5
 echo "install halyard succeed"
 
 mkdir /root/.kube/ && cd /root/.kube/
-wget https://raw.githubusercontent.com/hbstarjason/k8s_install/master/spinnaker/config
+# wget https://raw.githubusercontent.com/hbstarjason/k8s_install/master/spinnaker/config
 
 kubectl get node 
 
@@ -69,7 +77,6 @@ chmod 777 /root/ && chmod 777 /root/.kube/config
 cd /home/zhang/.hal/default/ && \
 mkdir service-settings && \
 cd service-settings
-
 
 
 cat >> clouddriver.yml <<EOF
