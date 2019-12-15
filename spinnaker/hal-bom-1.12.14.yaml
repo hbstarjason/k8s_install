@@ -86,3 +86,59 @@ $ hal version list
    Changelog: https://gist.github.com/spinnaker-release/b885f807f9ef03c8783620d169bf43f9
    Published: Thu Dec 12 15:31:36 UTC 2019
    (Requires Halyard >= 1.17)
+   
+ $ hal version bom 1.15.7
++ Get BOM for 1.15.7
+  Success
+version: 1.15.7
+timestamp: '2019-12-03 15:51:01'
+services:
+  echo:
+    version: 2.6.1-20190814171202
+    commit: 6160b79120cc8e601915a011f2b68c559042fbdc
+  clouddriver:
+    version: 6.2.2-20191017121307
+    commit: 9f757643b4c5cbee46d374dc64533ba05afa97bf
+  deck:
+    version: 2.10.4-20191001051323
+    commit: 6b181d6a6c5799040f14f1ea851e08f0fa74c791
+  fiat:
+    version: 1.6.1-20190802051323
+    commit: fced26ecb8aceefb1c5adce7bca7c6d0c776b893
+  front50:
+    version: 0.18.1-20190823144532
+    commit: a8c246252f1729959d73410aaacb66a817a8ce46
+  gate:
+    version: 1.10.2-20190928051323
+    commit: 9dfb915fe2a16412df3ac689745235d3d90b1db9
+  igor:
+    version: 1.4.0-20190709142816
+    commit: 324596955e9f4699b1e1356a8feba6608eeb70bc
+  kayenta:
+    version: 0.10.1-20190802051323
+    commit: 6a3c60f9467938b2c2d91a23489fb14d5c180e14
+  orca:
+    version: 2.8.4-20190919124222
+    commit: b5ea0292ba56b9a5950040f356104ee799316e9f
+  rosco:
+    version: 0.13.1-20191203105039
+    commit: b745ac8c1cf8d3c6e885d5608f5eb3b02090ad2f
+  defaultArtifact: {}
+  monitoring-third-party:
+    version: 0.14.0-20190702202823
+    commit: a37ddcef19500350bf48fb2a9ae94f24c26e8e81
+  monitoring-daemon:
+    version: 0.14.0-20190702202823
+    commit: a37ddcef19500350bf48fb2a9ae94f24c26e8e81
+dependencies:
+  redis:
+    version: 2:2.8.4-2
+  consul:
+    version: 0.7.5
+  vault:
+    version: 0.7.0
+artifactSources:
+  debianRepository: https://dl.bintray.com/spinnaker-releases/debians
+  dockerRegistry: gcr.io/spinnaker-marketplace
+  googleImageProject: marketplace-spinnaker-release
+  gitPrefix: https://github.com/spinnaker  
