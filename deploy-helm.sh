@@ -32,3 +32,13 @@ helm repo update
 # curl -L -o /usr/bin/helmfile https://github.com/roboll/helmfile/releases/download/v0.82.0/helmfile_linux_amd64 &&  chmod +x /usr/bin/helmfile
 
 
+
+# helm version
+# if [ $? -ne 0 ]
+# then
+#     echo "Installing Helm"
+#     curl -L https://git.io/get_helm.sh | bash -s -- --version v2.14.1
+#     helm init 
+# else
+#    echo "Helm is already installed" 
+# fi       
