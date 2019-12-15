@@ -1,9 +1,13 @@
 [0m
 [0m
-[2A[0m[0m[2K[0m[34m[1m- [0m[1mGet BOM for 1.12.14[0m
-[0m[2K[0m[0m
-[2A[0m[0m[2K[0m[32m[1m+ [0m[1mGet BOM for 1.12.14[0m
-[0m[2K[0m  [0mSuccess[0m[0m
+[2A[0m[0m[2K
+[0m[34m[1m- [0m[1mGet BOM for 1.12.14[0m
+[0m[2K
+[0m[0m
+[2A[0m[0m[2K
+[0m[32m[1m+ [0m[1mGet BOM for 1.12.14[0m
+[0m[2K
+[0m  [0mSuccess[0m[0m
 version: 1.12.14
 timestamp: '2019-07-01 14:20:04'
 services:
@@ -57,3 +61,28 @@ artifactSources:
   googleImageProject: marketplace-spinnaker-release
   gitPrefix: https://github.com/spinnaker
 [0m
+
+
+#############################################
+$ hal -v
+1.28.0-20191119172816
+$ hal version list
++ Get current deployment
+  Success
++ Get Spinnaker version
+  Success
++ Get released versions
+  Success
++ You are on version "", and the following are available:
+ - 1.15.7 (ExtremelyWickedShockinglyEvilAndVile):
+   Changelog: https://gist.github.com/spinnaker-release/8203c57d946e2fce8a79031716a9cb45
+   Published: Tue Dec 03 16:41:33 UTC 2019
+   (Requires Halyard >= 1.17)
+ - 1.16.6 (SecretObsession):
+   Changelog: https://gist.github.com/spinnaker-release/b200688131077600c458b07e0ae88052
+   Published: Tue Dec 03 15:37:45 UTC 2019
+   (Requires Halyard >= 1.17)
+ - 1.17.4 (LlamaLlama):
+   Changelog: https://gist.github.com/spinnaker-release/b885f807f9ef03c8783620d169bf43f9
+   Published: Thu Dec 12 15:31:36 UTC 2019
+   (Requires Halyard >= 1.17)
