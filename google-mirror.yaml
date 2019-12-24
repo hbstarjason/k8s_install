@@ -1,0 +1,29 @@
+# https://kubesail.com/ 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mirror
+spec:
+  selector:
+    matchLabels:
+      app: mirror
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mirror
+    spec:
+      containers:
+        - name: mirror
+          image: starjason/docker-google-mirror
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: '15m'
+              memory: '50Mi'
+            limits:
+              cpu: '500m'
+              memory: '400Mi'
+          ports:
+            - containerPort: 80
