@@ -1,5 +1,6 @@
 # yiluzhuanqian.com
-# 
+
+# wget https://raw.githubusercontent.com/hbstarjason/k8s_install/master/yiluzhuanqian.sh && sh yiluzhuanqian.sh
 
 wget http://www.yiluzhuanqian.com/soft/docker_images/ylzq_v19.3.1.tar
 docker load  --input ylzq_v19.3.1.tar
