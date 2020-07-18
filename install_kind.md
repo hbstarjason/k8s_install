@@ -1,8 +1,12 @@
+## 基本使用
+
 ```bash
 # Install docker
 此处省略，如果不会，后面建议不用看了。
 
 # Install kind
+# https://kind.sigs.k8s.io/
+
 $ curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/download/v0.8.1/kind-linux-amd64 && \
   chmod +x ./kind && \
   mv ./kind /usr/local/bin/kind 
@@ -133,5 +137,23 @@ hbstarjason-ha-worker2          Ready    <none>   55s    v1.18.2
 hbstarjason-ha-worker3          Ready    <none>   53s    v1.18.2
 
 # 3分钟启动一个高可用集群，意外惊喜~~
+```
+
+
+
+## 进阶使用
+
+```bash
+# 已自带StorageClass
+$ kubectl get sc 
+NAME                 PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+standard (default)   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  78m
+```
+
+```bash
+# 创建Ingress
+# https://kind.sigs.k8s.io/docs/user/ingress/
+
+$ 
 ```
 
