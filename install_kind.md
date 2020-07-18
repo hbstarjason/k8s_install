@@ -124,12 +124,14 @@ $ kind create cluster --name hbstarjason-ha --config hbstarjason-ha.yaml
 
 # 查看集群
 $ kubectl get node
-NAME                            STATUS     ROLES    AGE    VERSION
-hbstarjason-ha-control-plane    Ready      master   3m6s   v1.18.2
-hbstarjason-ha-control-plane2   Ready      master   118s   v1.18.2
-hbstarjason-ha-control-plane3   Ready      master   52s    v1.18.2
-hbstarjason-ha-worker           NotReady   <none>   38s    v1.18.2
-hbstarjason-ha-worker2          NotReady   <none>   38s    v1.18.2
-hbstarjason-ha-worker3          NotReady   <none>   38s    v1.18.2
+NAME                            STATUS   ROLES    AGE    VERSION
+hbstarjason-ha-control-plane    Ready    master   3m7s   v1.18.2
+hbstarjason-ha-control-plane2   Ready    master   2m2s   v1.18.2
+hbstarjason-ha-control-plane3   Ready    master   69s    v1.18.2
+hbstarjason-ha-worker           Ready    <none>   56s    v1.18.2
+hbstarjason-ha-worker2          Ready    <none>   55s    v1.18.2
+hbstarjason-ha-worker3          Ready    <none>   53s    v1.18.2
+
+# 3分钟启动一个高可用集群，意外惊喜~~
 ```
 
