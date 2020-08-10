@@ -5,6 +5,10 @@ $ tar -zxvf helm-v3.2.1-linux-amd64.tar.gz
 $ mv linux-amd64/helm /usr/local/bin/helm
 $ helm repo add stable http://mirror.azure.cn/kubernetes/charts
 $ helm version
+
+# HELMVERSION=helm-v3.2.4
+# curl -sSL https://get.helm.sh/${HELMVERSION}-linux-amd64.tar.gz | \
+    sudo tar xz -C /usr/local/bin --strip-components=1 linux-amd64/helm
 ```
 
 ```bash
