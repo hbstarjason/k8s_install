@@ -14,7 +14,7 @@ sleep 5
 
 # curl -fLsS https://get.docker.com/ | sh
 # curl -sSL https://get.daocloud.io/docker | sh
-# 
+# sudo curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 
 install_docker() {
 	yum install -y yum-utils device-mapper-persistent-data lvm2
