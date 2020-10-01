@@ -174,6 +174,10 @@ nodes:
     protocol: TCP
 EOF
 
+$ HELMVERSION=helm-v3.2.4 && \
+  curl -sSL https://get.helm.sh/${HELMVERSION}-linux-amd64.tar.gz | \
+    sudo tar xz -C /usr/local/bin --strip-components=1 linux-amd64/helm 
+
 $ helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 ## helm repo add nginx-stable https://helm.nginx.com/stable
 
