@@ -154,6 +154,40 @@ standard (default)   rancher.io/local-path   Delete          WaitForFirstConsume
 # 创建Ingress
 # https://kind.sigs.k8s.io/docs/user/ingress/
 
-$ 
+$ cat <<EOF | kind create cluster --name hbstarjason --config=-
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "ingress-ready=true"
+  extraPortMappings:
+  - containerPort: 30080
+    hostPort: 30080
+    protocol: TCP
+  - containerPort: 443
+    hostPort: 443
+    protocol: TCP
+EOF
+
+$ helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+## helm repo add nginx-stable https://helm.nginx.com/stable
+
+$ helm install nginx-ingress stable/nginx-ingress   \
+  --set controller.metrics.enabled=true \
+  --set controller.service.type=NodePort \
+  --set controller.service.nodePorts.http=30080
+$ kubectl apply -f  https://raw.githubusercontent.com/hbstarjason/springboot-devops-demo/master/flux/springboot-devops-demo.yaml
+
+$ kubectl get ingress
+NAME                     CLASS    HOSTS                                     ADDRESS      PORTS   AGE
+springboot-devops-demo   <none>   springboot-devops-demo-127-0-0-1.nip.io   172.19.0.2   80      17m
+
+$ curl springboot-devops-demo-127-0-0-1.nip.io:30080
+Hello, springboot-devops-demo!
 ```
 
