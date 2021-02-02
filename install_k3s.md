@@ -85,3 +85,14 @@ $ kubectl get sc
 #### 简单试用完毕，一个微型k8s集群瞬间搭建完毕，很酸爽！赶脚与另外两个项目很类似：
 1、kind（https://kind.sigs.k8s.io/）
 2、Microk8s （https://microk8s.io/）
+
+
+```sh
+2021-2-2 update 
+$ curl -sfL https://get.k3s.io | sh -
+$ export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+$ kubectl get pods --all-namespaces
+
+$ wget https://github.com/k3s-io/k3s/releases/download/v1.20.2%2Bk3s1/k3s 
+$ nohup sudo k3s server &
+```
