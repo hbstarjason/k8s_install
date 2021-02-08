@@ -1,12 +1,12 @@
 ```bash
 #方法一
-$ wget https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz
-$ tar -zxvf helm-v3.2.4-linux-amd64.tar.gz
+$ wget https://get.helm.sh/helm-v3.5.2-linux-amd64.tar.gz
+$ tar -zxvf helm-v3.5.2-linux-amd64.tar.gz
 $ mv linux-amd64/helm /usr/local/bin/helm
 $ helm repo add stable http://mirror.azure.cn/kubernetes/charts
 $ helm version
 
-# HELMVERSION=helm-v3.2.4
+# HELMVERSION=helm-v3.5.2
 # curl -sSL https://get.helm.sh/${HELMVERSION}-linux-amd64.tar.gz | \
     sudo tar xz -C /usr/local/bin --strip-components=1 linux-amd64/helm
 ```
