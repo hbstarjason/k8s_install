@@ -1,3 +1,5 @@
+#https://github.com/peng4740/gcpopenssh/blob/master/README.md
+
 #默认设置root密码为1234qwer
 
 #sshd_config配置文件备份
